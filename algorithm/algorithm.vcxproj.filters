@@ -21,5 +21,8 @@
     <ClCompile Include="pointer.c">
       <Filter>소스 파일\구조체와 포인터</Filter>
     </ClCompile>
+    <ClCompile Include="String_Pointer.c">
+      <Filter>소스 파일\구조체와 포인터</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
