@@ -3,8 +3,6 @@
 #include<stdlib.h>
 #include<string.h>
 
-
-
 typedef struct student {
 	int id;
 	char *names;
@@ -17,11 +15,13 @@ typedef struct ListNode {
 }ListNode;
 
 
-void insert_node(ListNode **head, ListNode *pre, ListNode *new_node);
-ListNode *create_node(student data, ListNode *link);
-void display(ListNode *head);
+void insert_node(ListNode **head, ListNode *pre, ListNode *new_node);	//노드 삽입
+ListNode *create_node(student data, ListNode *link);	//노드 생성
+void display(ListNode *head);	// 연결리스트 출력
+void  qsort(ListNode *head, ListNode *tail);	// 연결리스트 퀵정렬
+ListNode * partition(ListNode *head, ListNode *tail);
 
-
+ListNode *tail=NULL;
 
 int main() {
 	FILE *fp;
@@ -29,6 +29,7 @@ int main() {
 	ListNode *head = NULL;
 	student temp;
 	int size = 0; // 이름 길이
+	int cnt = 0; // 학생 수
 
 	fp = fopen("data.txt", "r");
 
@@ -38,9 +39,17 @@ int main() {
 		temp.names = (char*)malloc(sizeof(char)*(size + 1));
 		strcpy(temp.names, buffer);
 		insert_node(&head, NULL, create_node(temp, NULL));
+		cnt++;
 	}
 
+
 	display(head);
+	//for(int i=0;i<3;i++)
+	//qsort(head, tail,i);
+
+	qsort(head, tail);
+	display(head);
+
 	fclose(fp);
 
 }
@@ -50,6 +59,7 @@ void insert_node(ListNode **head, ListNode *pre, ListNode *new_node) {
 	if (*head == NULL) {
 		*head = new_node;
 		pre = *head;
+		tail = *head;
 	}
 	
 	else
@@ -60,8 +70,8 @@ void insert_node(ListNode **head, ListNode *pre, ListNode *new_node) {
 			temp = temp->link;
 		}
 		temp->link = new_node;
-	//	pre = temp;
-	//	pre->link = new_node;
+		tail = new_node;
+
 	}
 
 }
@@ -78,15 +88,66 @@ void display(ListNode *head)
 {
 	ListNode* p = head;
 	int i = 0;
-/*	printf("┌━━━━━━━━━━━┬━━━━━━━━━━┬━━━━━━━━━━┬\n");
-	printf("│ 학    번  │  이 름   │ 총점     │\n");
-	printf("├━━━━━━━━━━━┼━━━━━━━━━━┼━━━━━━━━━━┬\n");
-*/
 	while (p != NULL)
 	{
-		printf("%d번: %3d %3s %3d\n",++i, p->data.id, p->data.names, p->data.score);
+		printf("%d번: %3d %3s %3d \n",++i, p->data.id, p->data.names, p->data.score);
 		p = p->link;
 	}
-//	printf("└━━━━━━━━━━━┴━━━━━━━━━━━━┴━━━━━━━━━━-┘\n\n");
+
 	printf("\n");
+}
+
+void swap(ListNode *head, ListNode *value) {
+	student tmp;
+
+	// 노드 위치 바꾸기
+	tmp = head->data;
+	head->data = value->data;
+	value->data = tmp;
+
+	head = head->link;
+}
+
+// 분할
+ListNode * partition(ListNode *head, ListNode *tail) {	// 처음, 끝
+		
+	ListNode *pivot = head;
+	ListNode *value = head;
+	student tmp;
+
+	while (value != NULL && value != tail) {
+		if (value->data.id<tail->data.id) {
+			pivot = head;
+
+			tmp = head->data;
+			head->data = value->data;
+			value->data = tmp;
+			//swap(head, value);
+			head = head->link;
+		}
+		// 다음 노드 방문
+		value = value->link;
+	}
+
+	//맨 뒤 노드를 현재 노드로 바꾸기
+	tmp = head->data;
+	head->data = tail->data;
+	tail->data = tmp;
+	return pivot;
+	
+}
+
+void qsort(ListNode * head, ListNode *tail) {
+
+	if (head == tail)
+		return;
+
+	
+	ListNode *pivot = partition(head, tail);
+
+	if (pivot != NULL && pivot->link != NULL) {
+		qsort(pivot->link, tail);
+	}
+	if (pivot != NULL && head != pivot)
+		qsort(head, pivot);
 }
