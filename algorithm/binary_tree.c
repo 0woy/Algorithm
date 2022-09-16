@@ -6,8 +6,12 @@ typedef struct TreeNode {
 	struct TreeNode *left, *right;
 }TreeNode;
 
+void preorder(TreeNode *root);
+void inorder(TreeNode *root);
+void postorder(TreeNode *root);
 int main() {
 
+	// 노드를 3개 갖는 트리 생성.
 	TreeNode *n1, *n2, *n3;
 	n1 = (TreeNode*)malloc(sizeof(TreeNode));
 	n2 = (TreeNode*)malloc(sizeof(TreeNode));
@@ -22,6 +26,8 @@ int main() {
 	n3->data = 30;
 	n3->left = NULL;
 	n3->right = NULL;
+
+	
 
 	if (n1->data != NULL) {
 		printf("n1의 노드 : %d\n", n1->data);
