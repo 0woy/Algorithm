@@ -16,6 +16,12 @@
     <Filter Include="소스 파일\구조체와 포인터">
       <UniqueIdentifier>{88a95f57-ac55-4a56-ac38-fb8ffa2ae4a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\실습과제">
+      <UniqueIdentifier>{cd6af936-3197-4b97-a016-ac410945511e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\알고리즘실습">
+      <UniqueIdentifier>{ef2645f7-c14a-48fe-aaca-e2c5d473fc6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pointer.c">
@@ -26,6 +32,21 @@
     </ClCompile>
     <ClCompile Include="double_pointer.c">
       <Filter>소스 파일\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamic.c">
+      <Filter>소스 파일\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="double_pointer2.c">
+      <Filter>소스 파일\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.c">
+      <Filter>소스 파일\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="hw02.c">
+      <Filter>소스 파일\실습과제</Filter>
+    </ClCompile>
+    <ClCompile Include="hw01.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
