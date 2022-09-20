@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<stdlib.h>
 
 typedef struct TreeNode {
 	int data;
@@ -74,8 +74,8 @@ int main() {
 
 
 	TreeNode *tmp = n6;
+	printf("학번: 20204624\n이름: 박윤아\n레벨순회= ");
 	level_order(tmp);
-
 
 	free(n1);
 	free(n2);
@@ -96,7 +96,7 @@ void level_order(TreeNode *root) {
 	while(!is_empty(&q)) {
 		
 		tmp = dequeue(&q);
-		printf("%d ", tmp->data);
+		printf("[%d] ", tmp->data);
 		if(tmp->left)
 			enqueue(&q, tmp->left);
 		if(tmp->right)
