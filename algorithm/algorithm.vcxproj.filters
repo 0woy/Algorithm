@@ -13,40 +13,73 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\구조체와 포인터">
-      <UniqueIdentifier>{88a95f57-ac55-4a56-ac38-fb8ffa2ae4a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\실습과제">
-      <UniqueIdentifier>{cd6af936-3197-4b97-a016-ac410945511e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\알고리즘실습">
       <UniqueIdentifier>{ef2645f7-c14a-48fe-aaca-e2c5d473fc6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\알고리즘 이론">
+      <UniqueIdentifier>{88a95f57-ac55-4a56-ac38-fb8ffa2ae4a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\알고리즘 이론\구조체와 포인터">
+      <UniqueIdentifier>{918dcbe6-b577-4998-aa37-393b511b4c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\알고리즘 이론\트리응용">
+      <UniqueIdentifier>{4f45441c-1e36-480a-a95b-e6a038cfc99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\과제">
+      <UniqueIdentifier>{cd6af936-3197-4b97-a016-ac410945511e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pointer.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
-    <ClCompile Include="String_Pointer.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
-    <ClCompile Include="double_pointer.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
-    <ClCompile Include="Dynamic.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
-    <ClCompile Include="double_pointer2.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
-    <ClCompile Include="Student.c">
-      <Filter>소스 파일\구조체와 포인터</Filter>
-    </ClCompile>
     <ClCompile Include="hw02.c">
-      <Filter>소스 파일\실습과제</Filter>
+      <Filter>소스 파일\과제</Filter>
     </ClCompile>
     <ClCompile Include="hw01.c">
       <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
+    <ClCompile Include="binary_tree.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
+    <ClCompile Include="recur01.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
+    <ClCompile Include="recur02.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
+    <ClCompile Include="double_pointer.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="double_pointer2.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamic.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="String_Pointer.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Student.c">
+      <Filter>소스 파일\알고리즘 이론\구조체와 포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression_Tree.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
+    </ClCompile>
+    <ClCompile Include="Directory_calc.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
+    </ClCompile>
+    <ClCompile Include="Leaf_count.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
+    </ClCompile>
+    <ClCompile Include="node_count.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
+    </ClCompile>
+    <ClCompile Include="get_height.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread_tree.c">
+      <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
