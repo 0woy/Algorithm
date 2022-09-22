@@ -32,7 +32,7 @@ int is_full(QueueType *q)
 void enqueue(QueueType *q, element item)
 {
 	if (is_full(q))
-		printf("Å¥°¡ Æ÷È­\n");
+		printf("íê°€ í¬í™”\n");
 	q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
 	q->data[q->rear] = item;
 }
@@ -40,7 +40,7 @@ void enqueue(QueueType *q, element item)
 element dequeue(QueueType *q)
 {
 	if (is_empty(q))
-		printf("Å¥°¡ °ø¹é\n");
+		printf("íê°€ ê³µë°±\n");
 	q->front = (q->front + 1) % MAX_QUEUE_SIZE;
 	return q->data[q->front];
 }
@@ -49,7 +49,7 @@ void level_order(TreeNode *root);
 
 int main() {
 
-	// ³ëµå¸¦ 3°³ °®´Â Æ®¸® »ı¼º.
+	// ë…¸ë“œë¥¼ 3ê°œ ê°–ëŠ” íŠ¸ë¦¬ ìƒì„±.
 	TreeNode *n1, *n2, *n3, *n4, *n5, *n6;
 	n1 = (TreeNode*)malloc(sizeof(TreeNode));
 	n2 = (TreeNode*)malloc(sizeof(TreeNode));
@@ -74,7 +74,7 @@ int main() {
 
 
 	TreeNode *tmp = n6;
-	printf("ÇĞ¹ø: 20204624\nÀÌ¸§: ¹ÚÀ±¾Æ\n·¹º§¼øÈ¸= ");
+	printf("í•™ë²ˆ: 20204624\nì´ë¦„: ë°•ìœ¤ì•„\në ˆë²¨ìˆœíšŒ= ");
 	level_order(tmp);
 
 	free(n1);
@@ -87,7 +87,7 @@ int main() {
 	return 0;
 }
 
-//·¹º§¼øÈ¸
+//ë ˆë²¨ìˆœíšŒ
 void level_order(TreeNode *root) {
 	QueueType q;
 	TreeNode *tmp;
