@@ -7,36 +7,36 @@
 typedef struct TreeNode {
 	char data;
 	struct TreeNode *left, *right;
-	int is_thread;	//½º·¹µå¸é TRUE
+	int is_thread;	//ìŠ¤ë ˆë“œë©´ TRUE
 }TreeNode;
 
-// ÈÄ¼ÓÀÚ Ã£±â
+// í›„ì†ìž ì°¾ê¸°
 TreeNode *find_successor(TreeNode *node) {
 
-	// rnode: ÇöÀç ³ëµåÀÇ ¿À¸¥ÂÊ ³ëµå 
+	// rnode: í˜„ìž¬ ë…¸ë“œì˜ ì˜¤ë¥¸ìª½ ë…¸ë“œ 
 	TreeNode *rnode = node->right;
 
-	// rnode°¡ NULLÀÌ°Å³ª ÇöÀç ³ëµå°¡ ½º·¹µå¶ó¸é rnode ¹ÝÈ¯
+	// rnodeê°€ NULLì´ê±°ë‚˜ í˜„ìž¬ ë…¸ë“œê°€ ìŠ¤ë ˆë“œë¼ë©´ rnode ë°˜í™˜
 	if (rnode == NULL || node->is_thread == TRUE)
 		return rnode;
 
-	// rnode°¡ ¿À¸¥ÂÊ ÀÚ½ÄÀÌ¸é °¡Àå ¿ÞÂÊ ³ëµå·Î ÀÌµ¿
+	// rnodeê°€ ì˜¤ë¥¸ìª½ ìžì‹ì´ë©´ ê°€ìž¥ ì™¼ìª½ ë…¸ë“œë¡œ ì´ë™
 	while (rnode->left!=NULL)
 		rnode = rnode->left;
 	return rnode;
 }
 
-// ½º·¹µå Æ®¸®ÀÇ ÁßÀ§¼øÈ¸
+// ìŠ¤ë ˆë“œ íŠ¸ë¦¬ì˜ ì¤‘ìœ„ìˆœíšŒ
 void thread_inorder(TreeNode *root) {
 
-	// °¡Àå ¿ÞÂÊ ³ëµå·Î ÀÌµ¿
+	// ê°€ìž¥ ì™¼ìª½ ë…¸ë“œë¡œ ì´ë™
 	while (root->left != NULL)
 		root = root->left;
 
 	do{
-		printf("%c -> ", root->data); // µ¥ÀÌÅÍ Ãâ·Â
+		printf("%c -> ", root->data); // ë°ì´í„° ì¶œë ¥
 		root = find_successor(root);
-	} while (root);	// ³ëµå°¡ NULLÀÌ ¾Æ´Ï¶ó¸é ¹Ýº¹
+	} while (root);	// ë…¸ë“œê°€ NULLì´ ì•„ë‹ˆë¼ë©´ ë°˜ë³µ
 }
 
 int main() {
