@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h> // malloc, free ÇÔ¼ö°¡ ¼±¾ğµÈ Çì´õÆÄÀÏ
+#include<stdlib.h> // malloc, free í•¨ìˆ˜ê°€ ì„ ì–¸ëœ í—¤ë”íŒŒì¼
 
 void allocMemory(int **ptr, int m_size) {
 
@@ -10,7 +10,7 @@ void allocMemory(int **ptr, int m_size) {
 
 	}
 
-	printf("=== allocMemory ÇÔ¼ö ³»¿¡¼­ Ãâ·Â === \n");
+	printf("=== allocMemory í•¨ìˆ˜ ë‚´ì—ì„œ ì¶œë ¥ === \n");
 	for (int i = 0; i < m_size; i++) {
 		printf("%d\n", (*ptr)[i]);
 	}
@@ -21,13 +21,13 @@ int main() {
 	int *numPtr;
 	int size = 10;
 		
-	allocMemory(&numPtr, size); //Æ÷ÀÎÅÍ numPtrÀÇ ÁÖ¼Ò°ªÀ» º¸³¿
+	allocMemory(&numPtr, size); //í¬ì¸í„° numPtrì˜ ì£¼ì†Œê°’ì„ ë³´ëƒ„
 
 	for (int i = 0; i < size; i++) {
 		numPtr[i] = numPtr[i] + 1;
 	}
 
-	printf("=== main ÇÔ¼ö ³»¿¡¼­ Ãâ·Â ===\n");
+	printf("=== main í•¨ìˆ˜ ë‚´ì—ì„œ ì¶œë ¥ ===\n");
 	for (int i = 0; i < size; i++) {
 		printf("%d\n", numPtr[i]);
 	}
