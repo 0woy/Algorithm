@@ -9,13 +9,13 @@ void main() {
 	printf("str2 = %s\n", str2);
 
 	str2 = "Science";
-	//str1 = "Science" //º¯°æ ºÒ°¡´É
+	//str1 = "Science" //ÂºÂ¯Â°Ã¦ ÂºÃ’Â°Â¡Â´Ã‰
 
 	printf("str1 = %s\n", str1);
 	printf("str2 = %s\n", str2);
 
 	str1[0] = 'h';
-	//str2[0] ='c	// º¯°æ ºÒ°¡´É
+	//str2[0] ='c	// ÂºÂ¯Â°Ã¦ ÂºÃ’Â°Â¡Â´Ã‰
 
 	printf("str1 = %s\n", str1);
 	printf("str2 = %s\n", str2);
