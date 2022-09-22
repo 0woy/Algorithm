@@ -4,9 +4,9 @@
 typedef struct TreeNode {
 	int data;
 	struct TreeNode *left, *right;
-}TreeNdoe;
+}TreeNode;
 
-int get_node_count(TreeNdoe *root) {
+int get_node_count(TreeNode *root) {
 		
 	int count = 0;	//노드 개수
 
@@ -24,15 +24,15 @@ int get_node_count(TreeNdoe *root) {
 
 int main() {
 
-	TreeNdoe n1 = { 10, NULL,NULL };
-	TreeNdoe n2 = { 20,NULL,NULL };
-	TreeNdoe n3 = { 30, &n1, &n2 };
-	TreeNdoe n4 = { 60, NULL,NULL };
-	TreeNdoe n5 = { 65, &n4, NULL };
-	TreeNdoe n6 = { 50, &n3,&n5 };
+	TreeNode n1 = { 10, NULL,NULL };
+	TreeNode n2 = { 20,NULL,NULL };
+	TreeNode n3 = { 30, &n1, &n2 };
+	TreeNode n4 = { 60, NULL,NULL };
+	TreeNode n5 = { 65, &n4, NULL };
+	TreeNode n6 = { 50, &n3,&n5 };
 	
-	TreeNdoe *tmp = &n6;
-	TreeNdoe *none =NULL;	// 노드가 없을 시
+	TreeNode *tmp = &n6;
+	TreeNode *none =NULL;	// 노드가 없을 시
 
 	int count = get_node_count(tmp);
 
