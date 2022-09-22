@@ -15,7 +15,7 @@ typedef struct student_info
 int main() {
 	FILE *fp;
 	student *std_info, temp;
-	char buffer[30]; //ÀÔ·ÂÀ» À§ÇÑ ¹öÆÛ
+	char buffer[30]; //Ã€Ã”Â·Ã‚Ã€Â» Ã€Â§Ã‡Ã‘ Â¹Ã¶Ã†Ã›
 	int cnt = 0;
 	int size = 0;
 
