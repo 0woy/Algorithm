@@ -8,12 +8,12 @@ typedef struct TreeNode {
 
 int get_node_count(TreeNode *root) {
 		
-	int count = 0;	//³ëµå °³¼ö
+	int count = 0;	//ë…¸ë“œ ê°œìˆ˜
 
-	// ÇöÀç ³ëµå°¡ NULLÀÌ ¾Æ´Ï¸é ¿ŞÂÊ, ¿À¸¥ÂÊ ÀÚ½ÄÀ¸·Î ÀÌµ¿.
+	// í˜„ì¬ ë…¸ë“œê°€ NULLì´ ì•„ë‹ˆë©´ ì™¼ìª½, ì˜¤ë¥¸ìª½ ìì‹ìœ¼ë¡œ ì´ë™.
 	if (root != NULL) {
 
-		// ÀÚ±â ÀÚ½Å = 1
+		// ìê¸° ìì‹  = 1
 		count = 1 +
 			get_node_count(root->left) +
 			get_node_count(root->right);
@@ -32,10 +32,10 @@ int main() {
 	TreeNode n6 = { 50, &n3,&n5 };
 	
 	TreeNode *tmp = &n6;
-	TreeNode *none =NULL;	// ³ëµå°¡ ¾øÀ» ½Ã
+	TreeNode *none =NULL;	// ë…¸ë“œê°€ ì—†ì„ ì‹œ
 
 	int count = get_node_count(tmp);
 
-	printf("ÀüÃ¼ ³ëµåÀÇ °³¼ö´Â: %d\n", count);
+	printf("ì „ì²´ ë…¸ë“œì˜ ê°œìˆ˜ëŠ”: %d\n", count);
 
 }

@@ -1,4 +1,4 @@
-// P284. ¼ö½ÄÆ®¸® °è»ê ÇÁ·Î±×·¥
+// P284. ìˆ˜ì‹íŠ¸ë¦¬ ê³„ì‚° í”„ë¡œê·¸ë¨
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -23,7 +23,7 @@ TreeNode n7 = { '+',&n3,&n6 };
 TreeNode *exp = &n7;
 
 
-// ¼ö½Ä °è»ê ÇÔ¼ö
+// ìˆ˜ì‹ ê³„ì‚° í•¨ìˆ˜
 
 int evaluate(TreeNode *root) {
 
@@ -35,7 +35,7 @@ int evaluate(TreeNode *root) {
 	else {
 		int op1 = evaluate(root->left);
 		int op2 = evaluate(root->right);
-		printf("%d %c %d¸¦ °è»êÇÕ´Ï´Ù.\n", op1, root->data, op2);
+		printf("%d %c %dë¥¼ ê³„ì‚°í•©ë‹ˆë‹¤.\n", op1, root->data, op2);
 		switch (root->data){
 
 		case '+':
@@ -57,7 +57,7 @@ int evaluate(TreeNode *root) {
 
 int main(void) {
 
-	printf("¼ö½ÄÀÇ °ª : %d", evaluate(exp));
+	printf("ìˆ˜ì‹ì˜ ê°’ : %d", evaluate(exp));
 }
 
 

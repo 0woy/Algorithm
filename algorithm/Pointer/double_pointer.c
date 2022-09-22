@@ -4,23 +4,23 @@
 
 int main(void) {
 
-	FILE *fp; //ÆÄÀÏ Æ÷ÀÎÅÍ º¯¼ö ¼±¾ð
-	int m_row = 0, m_col = 3; // Çà·ÄÀÇ Å©±â¸¦ 0À¸·Î ÃÊ±âÈ­
+	FILE *fp; //íŒŒì¼ í¬ì¸í„° ë³€ìˆ˜ ì„ ì–¸
+	int m_row = 0, m_col = 3; // í–‰ë ¬ì˜ í¬ê¸°ë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	int **matrix;
 	int temp1, temp2, temp3;
 	int i, j;
 
 	 
-	//data.txtÆÄÀÏÀ» ÀÐ±â¸ðµå·Î ¿­¾î »ý¼ºµÈ  FILE±¸Á¶Ã¼¸¦ fp¿¡ ÇÒ´ç
+	//data.txtíŒŒì¼ì„ ì½ê¸°ëª¨ë“œë¡œ ì—´ì–´ ìƒì„±ëœ  FILEêµ¬ì¡°ì²´ë¥¼ fpì— í• ë‹¹
 	fp = fopen("data.txt", "r"); 
 
-	//¸¸¾à fopen ÇÔ¼ö¿¡¼­ ¿¡·¯°¡ ¹ß»ýÇÏ¿© fp¿¡ NULL°ªÀÌ ÀúÀåµÇ¾ú´Ù¸é ÆÄÀÏ ¿­±â ½ÇÆÐ
+	//ë§Œì•½ fopen í•¨ìˆ˜ì—ì„œ ì—ëŸ¬ê°€ ë°œìƒí•˜ì—¬ fpì— NULLê°’ì´ ì €ìž¥ë˜ì—ˆë‹¤ë©´ íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨
 	if (fp == NULL) {
-		printf("ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê¾Ò½À´Ï´Ù.\n");
-		return 0; //¸Þ¼¼Áö Ãâ·Â ÈÄ ÇÁ·Î±×·¥ Á¾·á
+		printf("íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n");
+		return 0; //ë©”ì„¸ì§€ ì¶œë ¥ í›„ í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
 	}
 
-	// Çà·ÄÀÇ Å©±â °è»ê
+	// í–‰ë ¬ì˜ í¬ê¸° ê³„ì‚°
 	while (!feof(fp)) 
 	{
 		fscanf(fp, "%d%d%d", &temp1, &temp2, &temp3);
@@ -28,7 +28,7 @@ int main(void) {
 
 	}
 
-	//Dynamic ¹è¿­ÀÇ Å©±â¿¡ µû¸¥ ÇÒ´ç
+	//Dynamic ë°°ì—´ì˜ í¬ê¸°ì— ë”°ë¥¸ í• ë‹¹
 	matrix = (int**)malloc(sizeof(int *)* m_row);
 	for (i = 0; i < m_row; i++) {
 		matrix[i] = (int*)malloc(sizeof(int)*m_col);
@@ -36,7 +36,7 @@ int main(void) {
 	}
 	rewind(fp);
 
-	printf("=== ÀÔ·ÂµÈ Çà·Ä ===\n");
+	printf("=== ìž…ë ¥ëœ í–‰ë ¬ ===\n");
 	for (int i = 0; i < m_row; i++) {
 		for (int j = 0; j < m_col; j++) {
 			printf("%3d ", matrix[i][j]);
@@ -44,7 +44,7 @@ int main(void) {
 		printf("\n");
 	}
 
-	//DynamicÀ¸·Î ÇÒ´çµÈ ¹è¿­ ÇØÁ¦
+	//Dynamicìœ¼ë¡œ í• ë‹¹ëœ ë°°ì—´ í•´ì œ
 	for (int i = 0; i < m_row; i++)
 		free(matrix[i]);
 	free(matrix);

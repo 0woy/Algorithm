@@ -8,7 +8,7 @@ typedef struct TreeNode {
 
 int calc_dir(TreeNode *root) {
 	
-	// Æ®¸®°¡ ºñ¾îÀÖÀ¸¸é Á¾·á
+	// íŠ¸ë¦¬ê°€ ë¹„ì–´ìˆìœ¼ë©´ ì¢…ë£Œ
 	if (root == NULL)
 		return 0;
 
@@ -35,6 +35,6 @@ int main() {
 
 	TreeNode *tmp = &n1;
 	int total = calc_dir(tmp);
-	printf("µğ·ºÅä¸®ÀÇ Å©±â = %d\n", total);
+	printf("ë””ë ‰í† ë¦¬ì˜ í¬ê¸° = %d\n", total);
 
 }

@@ -10,13 +10,13 @@ int get_leaf_count(TreeNode *root) {
 
 	int count = 0;
 	if (root != NULL) {
-		// ÀÚ½ÄÀÌ ÇÏ³ª¶óµµ ÀÖÀ¸¸é ¹Ù·Î ÀÚ½Ä ³ëµå·Î ³Ñ¾î°¨.
+		// ìì‹ì´ í•˜ë‚˜ë¼ë„ ìˆìœ¼ë©´ ë°”ë¡œ ìì‹ ë…¸ë“œë¡œ ë„˜ì–´ê°.
 		if (root->left != NULL || root->right != NULL) {
 			count = get_leaf_count(root->left) +
 				get_leaf_count(root->right);
 		}
 
-		// ÀÚ½ÄÀÌ ÇÏ³ªµµ ¾øÀ¸¸é 1À» ¹İÈ¯
+		// ìì‹ì´ í•˜ë‚˜ë„ ì—†ìœ¼ë©´ 1ì„ ë°˜í™˜
 		else
 			return 1;
 	}
@@ -42,6 +42,6 @@ int main() {
 	TreeNode n6 = { 50, &n3,&n5 };
 
 	TreeNode *tmp = &n6;
-	printf("´Ü¸» ³ëµåÀÇ °³¼ö: %d\n", get_leaf_count(tmp));
+	printf("ë‹¨ë§ ë…¸ë“œì˜ ê°œìˆ˜: %d\n", get_leaf_count(tmp));
 
 }

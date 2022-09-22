@@ -11,7 +11,7 @@ void inorder(TreeNode *root);
 void postorder(TreeNode *root);
 int main() {
 
-	// ³ëµå¸¦ 3°³ °®´Â Æ®¸® »ý¼º.
+	// ë…¸ë“œë¥¼ 3ê°œ ê°–ëŠ” íŠ¸ë¦¬ ìƒì„±.
 	TreeNode *n1, *n2, *n3;
 	n1 = (TreeNode*)malloc(sizeof(TreeNode));
 	n2 = (TreeNode*)malloc(sizeof(TreeNode));
@@ -30,11 +30,11 @@ int main() {
 	
 
 	if (n1->data != NULL) {
-		printf("n1ÀÇ ³ëµå : %d\n", n1->data);
+		printf("n1ì˜ ë…¸ë“œ : %d\n", n1->data);
 		if (n1->left) {
-			printf("n1ÀÇ ¿ÞÂÊ ÀÚ½Ä ³ëµå: %d\n", *n1->left);
+			printf("n1ì˜ ì™¼ìª½ ìžì‹ ë…¸ë“œ: %d\n", *n1->left);
 		if(n1->right)
-			printf("n1ÀÇ ¿À¸¥ÂÊ ÀÚ½Ä ³ëµå: %d\n", *n1->right);
+			printf("n1ì˜ ì˜¤ë¥¸ìª½ ìžì‹ ë…¸ë“œ: %d\n", *n1->right);
 		}
 	}
 
