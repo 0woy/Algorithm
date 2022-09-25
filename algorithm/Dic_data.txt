@@ -1,0 +1,13 @@
+i node 식물의 마디
+i link 연결통로
+i father 아버지
+i mother 어머니
+i apple 사과
+i orange 오렌지
+i zebra 얼룩말
+p
+s link
+d link
+d hello
+p
+q
