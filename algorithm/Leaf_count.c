@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
+#include<Windows.h>
 typedef struct TreeNode {
 	int data;
 	struct TreeNode *left, *right;
@@ -31,6 +33,8 @@ int main() {
   n1    n2	   n4	   n8
 				  n7
  */
+
+	//SetConsoleOutputCP(65001);
 
 	TreeNode n1 = { 10, NULL,NULL };
 	TreeNode n2 = { 20,NULL,NULL };

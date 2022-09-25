@@ -1,0 +1,6 @@
+i node 식물의마디
+i link 연결통로
+p
+s link
+p
+q

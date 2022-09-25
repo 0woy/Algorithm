@@ -81,5 +81,11 @@
     <ClCompile Include="Thread_tree.c">
       <Filter>소스 파일\알고리즘 이론\트리응용</Filter>
     </ClCompile>
+    <ClCompile Include="알고리즘 실습\Dictionary.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
+    <ClCompile Include="Dic_tree.c">
+      <Filter>소스 파일\알고리즘실습</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

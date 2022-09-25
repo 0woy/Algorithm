@@ -32,7 +32,7 @@ int is_full(QueueType *q)
 void enqueue(QueueType *q, element item)
 {
 	if (is_full(q))
-		printf("큐가 포화\n");
+		printf("?��? ?�화\n");
 	q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
 	q->data[q->rear] = item;
 }
@@ -40,7 +40,7 @@ void enqueue(QueueType *q, element item)
 element dequeue(QueueType *q)
 {
 	if (is_empty(q))
-		printf("큐가 공백\n");
+		printf("?��? 공백\n");
 	q->front = (q->front + 1) % MAX_QUEUE_SIZE;
 	return q->data[q->front];
 }
@@ -49,7 +49,7 @@ void level_order(TreeNode *root);
 
 int main() {
 
-	// 노드를 3개 갖는 트리 생성.
+	// ?�드�?3�?갖는 ?�리 ?�성.
 	TreeNode *n1, *n2, *n3, *n4, *n5, *n6;
 	n1 = (TreeNode*)malloc(sizeof(TreeNode));
 	n2 = (TreeNode*)malloc(sizeof(TreeNode));
@@ -74,7 +74,7 @@ int main() {
 
 
 	TreeNode *tmp = n6;
-	printf("학번: 20204624\n이름: 박윤아\n레벨순회= ");
+	printf("?�번: 20204624\n?�름: 박윤??n?�벨?�회= ");
 	level_order(tmp);
 
 	free(n1);
@@ -87,7 +87,7 @@ int main() {
 	return 0;
 }
 
-//레벨순회
+//?�벨?�회
 void level_order(TreeNode *root) {
 	QueueType q;
 	TreeNode *tmp;

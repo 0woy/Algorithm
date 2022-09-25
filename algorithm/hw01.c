@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
+#include<Windows.h>
 typedef struct {
 	int id;
 	char *name;
@@ -71,6 +71,8 @@ ListNode *create_node(student data, ListNode *link) {
 
 int main() {
 
+	SetConsoleOutputCP(65001);
+	 
 	FILE *fp;
 	
 	ListNode *list1=NULL;
