@@ -41,10 +41,10 @@ int main() {
 		return;
 	}
 
-	printf("Up Heap\n");
+	printf("학번: 20204624\n이름: 박윤아\n\n**MAX HEAP**\n\n");
 	while (!feof(fp)) {
 		fscanf(fp, "%d %s", &tmp.key, tmp.animal);
-		printf("Insert %d %s\n", tmp.key, tmp.animal);
+		printf(">>%d %s\n", tmp.key, tmp.animal);
 
 		insert_max_heap(&heap, tmp);
 		 display(&heap);
@@ -71,7 +71,7 @@ void display(HeapType *heap) {
 	HeapType *h = heap;
 
 	for (int i = 1; i < h->heap_size+1; i++) {
-		printf("%d : %s -> ", h->heap[i].key, h->heap[i].animal);
+		printf("%d:%s > ", h->heap[i].key, h->heap[i].animal);
 	}
 	printf("\n");
 }
