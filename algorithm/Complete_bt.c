@@ -1,12 +1,10 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>	// 제곱수를 구하기 위해 추가
-#include<Windows.h>
+#include<math.h>	// 제곱근을 구하기 위해 추가
 
-
-// MAX 정의, 연산자 우선순위를 고려하여 괄호 안에 넣어주어야 함.
+// a와 b중 더 큰것을 반환 하는 MAX 정읜
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 typedef struct TreeNode {
@@ -18,7 +16,7 @@ typedef struct TreeNode {
 TreeNode * create_node(int data) {
 	TreeNode *n = (TreeNode*)malloc(sizeof(TreeNode));
 	
-	// 동적할당에 실패할 경우
+	// 동적 할당에 실패하면 return;
 	if (n == NULL) return;
 	
 	n->data = data;
@@ -34,7 +32,7 @@ void Insert_node(TreeNode **root, int data) {
 	while (tmp != NULL) {
 
 		if (tmp->data == data) {
-			printf("이미 존재하는 값입니다.");
+			printf("이미 중복된 값이 있습니다.\n");
 			return;
 		}
 		p = tmp;
@@ -56,9 +54,9 @@ void Insert_node(TreeNode **root, int data) {
 }
 
 int get_height(TreeNode *root) {
-	int height = 0; //트리 높이 
+	int height = 0; // 트리 높이
 
-	// 현재 노드가 NULL이 아니면, 왼쪽 과 오른쪽 서브트리중 더 큰 값 반환
+	//  왼쪽 오른쪽 서브트리의 높이를 비교하여 반복.
 	if (root != NULL) {
 		height = 1 +
 			MAX(get_height(root->left), get_height(root->right));
@@ -71,32 +69,27 @@ int get_leaf_count(TreeNode *root) {
 
 	int count = 0;
 	if (root != NULL) {
-		// 자식이 하나라도 있으면 바로 자식 노드로 넘어감.
+		// 자식이 하나라도 있으면 get_leaf_count 호출
 		if (root->left != NULL || root->right != NULL) {
 			count = get_leaf_count(root->left) +
 				get_leaf_count(root->right);
 		}
 
-		// 자식이 하나도 없으면 1을 반환
+		// 단말 노드면 1 return;
 		else
 			return 1;
 	}
 	return count;
 }
 
-
-
 int main() {
-
-	// 한글 깨짐 방지
-	SetConsoleOutputCP(65001);
 	FILE *fp;
 	int data = 0;
 	TreeNode *root = NULL;
-	fp = fopen("CBT_data2.txt", "r");
+	fp = fopen("CBT_data1.txt", "r");
 
 	if (fp == NULL) {
-		printf("파일이 존재하지 않습니다.");
+		printf("파일을 열 수 없습니다.");
 		return;
 	}
 
@@ -106,16 +99,23 @@ int main() {
 		Insert_node(&root, data);
 	}
 	
-	// 트리의 높이
+	// 트리 높이
 	int height = get_height(root);
-//	printf("높이: %d", height);
+//	printf("?믪씠: %d", height);
 	int cbt_node = pow(2, (height - 1));
 
-	// 단말노드
+	// 단말 노드 개수
 	int leaf = get_leaf_count(root);
 
 	if (cbt_node != leaf)
-		printf("완전 이진트리가 이닙니다.");
+		printf("완전 이진트리가 아닙니다.");
 	else
-		printf("완전이진트리입니다.");
+		printf("완전 이진트리 입니다.\n");
+
+	fclose(fp);
+
+	if (root != NULL) 
+		free(root);
+	
+	
 }
