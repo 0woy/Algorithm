@@ -1,10 +1,10 @@
-i node ì‹ë¬¼ì˜ ë§ˆë””
-i link ì—°ê²°í†µë¡œ
-i father ì•„ë²„ì§€
-i mother ì–´ë¨¸ë‹ˆ
-i apple ì‚¬ê³¼
-i orange ì˜¤ë Œì§€
-i zebra ì–¼ë£©ë§
+i node ½Ä¹°ÀÇ ¸¶µğ
+i link ¿¬°áÅë·Î
+i father ¾Æ¹öÁö
+i mother ¾î¸Ó´Ï
+i apple »ç°ú
+i orange ¿À·»Áö
+i zebra ¾ó·è¸»
 p
 s link
 d link
