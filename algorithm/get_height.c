@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-// MAX Ï†ïÏùò, Ïó∞ÏÇ∞Ïûê Ïö∞ÏÑ†ÏàúÏúÑÎ•º Í≥†Î†§ÌïòÏó¨ Í¥ÑÌò∏ ÏïàÏóê ÎÑ£Ïñ¥Ï£ºÏñ¥Ïïº Ìï®.
+// MAX ¡§¿«, ø¨ªÍ¿⁄ øÏº±º¯¿ß∏¶ ∞Ì∑¡«œø© ∞˝»£ æ»ø° ≥÷æÓ¡÷æÓæﬂ «‘.
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 typedef struct TreeNode {
@@ -11,22 +11,22 @@ typedef struct TreeNode {
 }TreeNode;
 
 int get_height(TreeNode *root) {
-	int height = 0; //Ìä∏Î¶¨ ÎÜíÏù¥ 
-	
-	// ÌòÑÏû¨ ÎÖ∏ÎìúÍ∞Ä NULLÏù¥ ÏïÑÎãàÎ©¥, ÏôºÏ™Ω Í≥º Ïò§Î•∏Ï™Ω ÏÑúÎ∏åÌä∏Î¶¨Ï§ë Îçî ÌÅ∞ Í∞í Î∞òÌôò
+	int height = 0; //∆Æ∏Æ ≥Ù¿Ã 
+
+	// «ˆ¿Á ≥ÎµÂ∞° NULL¿Ã æ∆¥œ∏È, øﬁ¬  ∞˙ ø¿∏•¬  º≠∫Í∆Æ∏Æ¡ﬂ ¥ı ≈´ ∞™ π›»Ø
 	if (root != NULL) {
-		height = 1+	
+		height = 1 +
 			MAX(get_height(root->left), get_height(root->right));
 	}
 	return height;
 }
 
 int main() {
-/*		  n6
-	 n3			 n5
-  n1    n2	  n4
-				 n7
-  */
+	/*		  n6
+		 n3			 n5
+	  n1    n2	  n4
+					 n7
+	  */
 
 	TreeNode n1 = { 10, NULL,NULL };
 	TreeNode n2 = { 20,NULL,NULL };
@@ -37,7 +37,7 @@ int main() {
 	TreeNode n6 = { 50, &n3,&n5 };
 
 	TreeNode *tmp = &n6;
-	
-	printf("Ìä∏Î¶¨Ïùò ÎÜíÏù¥: %d\n", get_height(tmp));
-	
+
+	printf("∆Æ∏Æ¿« ≥Ù¿Ã: %d\n", get_height(tmp));
+
 }
