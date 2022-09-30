@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<Windows.h>
 typedef struct {
 	int id;
 	char *name;
