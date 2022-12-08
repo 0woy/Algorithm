@@ -113,6 +113,7 @@ int partition(int arr[], int left, int right) {
 		}
 	} while (low < high);
 
+	printf("low = %d, high = %d 이므로 Pivot과 %d 스왑\n", low, high, arr[high]);
 	//low와 high가 교차한 후 
 	SWAP(arr[left], arr[high], tmp);  //pivot과 교차된 high에 있는 원소를 교환
 	printf("\n");
