@@ -51,6 +51,11 @@ element dequeue(QueueType *q) {
 	return q->queue[q->front];
 }
 
+void print_list(int *list, int n) {
+	for (int i = 0; i < n; i++) {
+		printf("[%d] ", list[i]);
+	}
+}
 
 // 함수 원형 작성
 void radix_sort(int list[], int n);
@@ -74,16 +79,12 @@ int main() {
 	printf("이름: 박윤아\n학번: 20204624\n제출일: 2022.11.25.\n\n");
 
 	printf("정렬 전 데이터\n");
-	for (int i = 0; i < n; i++) {
-		printf("[%d] ", list[i]);
-	}
+	print_list(&list, n);
 
-	radix_sort(list, n);	//기수 정렬
+	radix_sort(&list, n);	//기수 정렬
 
 	printf("\n정렬 후 데이터\n");
-	for (int i = 0; i < n; i++) {
-		printf("[%d] ", list[i]);
-	}
+	print_list(&list, n);
 
 	fclose(fp);	//파일 닫기
 
@@ -119,7 +120,10 @@ void radix_sort(int list[], int n) {
 				printf("%d ", list[i++]);	//삽입한 데이터 출력
 			}
 			printf("\n");
+			
 		}
+		print_list(list, n);
+		printf("\n");
 		factor *= 10; //그 다음 자릿수로 이동
 	}
 }
