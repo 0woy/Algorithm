@@ -64,11 +64,7 @@ void preorder(AVLNode *root)
 {
 	if (root != NULL)
 	{
-		
-		if (i ==1 || i==3 || i ==7) {
-			printf("\n");
-		}
-		printf("[%2s:%2s]", root->data.word, root->data.mean);
+		printf("%2s-%2s  ", root->data.word, root->data.mean);
 		i++;
 		preorder(root->left_child);
 		preorder(root->right_child);
@@ -81,7 +77,7 @@ int main() {
 	char flag;	// 파일에서 명령어를 읽어오는 변수
 	element tmp;
 	AVLNode *AN;
-	fp = fopen("AVL_data.txt", "r");
+	fp = fopen("dic.txt", "r");
 
 	if (!fp) { //파일을 읽어오는데 실패한 경우
 		printf("CAN NOT OPEN FILE"); //에러메세지 출력
@@ -92,7 +88,7 @@ int main() {
 		fscanf(fp, "%c", &flag);	// i: 삽입 / s: 탐색
 		if (flag == 'i') {
 			fscanf(fp, "%s %s", tmp.word, tmp.mean);
-			printf("삽입: %s %s\n", tmp.word, tmp.mean);
+			printf("삽입 : %s\n", tmp.word);
 			avl_add(&root, tmp);
 
 
@@ -101,10 +97,14 @@ int main() {
 			fscanf(fp, "%s", tmp.word);
 			strcpy(tmp.mean, "");
 			AN = avl_search(root, tmp);
-			printf("단어 %s의 의미 %s\n", AN->data.word, AN->data.mean);
+			if (AN == NULL) {
+				printf("%s 은 사전에 없습니다.\n", tmp.word);
+			}
+			else
+				printf("%s 은 영어로 %s입니다.\n", AN->data.word, AN->data.mean);
 		}
 	}
-	printf("\n\nAVL 트리 출력\n");
+	printf("\n\nAVL 전위순회 출력 결과\n");
 	preorder(root);
 	fclose(fp);
 	return 0;
